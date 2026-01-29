@@ -4,7 +4,9 @@
     imports = [
         ./git.nix
         ./packages.nix
-        ./vim.nix 
+        ./vim.nix
+        ./zsh.nix
+        ./fastfetch.nix
     ];
 
     # Set default environment variables here

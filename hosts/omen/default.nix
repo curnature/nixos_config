@@ -18,6 +18,8 @@
         ../../nixos/user.nix
         ../../nixos/root_pkgs.nix
         ../../nixos/zsh.nix
+        ../../nixos/hyprland.nix  
+        
     ];
 
     # Force the hostname to match what we passed from the factory

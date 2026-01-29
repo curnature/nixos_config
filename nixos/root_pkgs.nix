@@ -21,4 +21,10 @@
         # Management
         home-manager
     ];
+
+    # Define Fonts System-Wide
+    fonts.packages = with pkgs; [
+        nerd-fonts.commit-mono
+        nerd-fonts.cousine
+    ];
 }
