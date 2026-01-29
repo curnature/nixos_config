@@ -2,7 +2,7 @@
 
 {
     # Allow unfree packages (Chrome, etc.)
-    nixpkgs.config.allowUnfree = true;
+    # nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
         # System Tools

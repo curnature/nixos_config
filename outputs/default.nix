@@ -37,6 +37,8 @@ let
                 # Pass arguments to Home Manager modules as well
                 home-manager.extraSpecialArgs = { inherit inputs vars hostname; };
 
+                home-manager.backupFileExtension = "backup";
+
                 # C. The Master User Profile
                 # Dynamically imports the user config based on the username variable.
                 # Currently points to the Linux GUI profile.

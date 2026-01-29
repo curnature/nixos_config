@@ -11,7 +11,7 @@
         enable = true;
         wayland.enable = true; # Improves performance for Hyprland
         theme = "catppuccin-mocha";
-        package = pkgs.kdePackages.sddm; # Use the Qt6 version for modern themes
+        # package = pkgs.kdePackages.sddm; # Use the Qt6 version for modern themes
     };
 
     # Install the theme directly as a configured package

@@ -1,4 +1,4 @@
-{ pkgs, vars, ... }:
+{ pkgs, vars, hostname, ... }:
 
 {
     programs.zsh = {
@@ -16,7 +16,7 @@
         shellAliases = {
             # 1. System & Home Manager Update (The "One Command to Rule Them All")
             # This rebuilds your system using the flake in your config directory
-            update = "sudo nixos-rebuild switch --flake /home/${vars.username}/nixos-config#${vars.hostname}";
+            update = "sudo nixos-rebuild switch --flake /home/${vars.username}/nixos-config#${hostname}";
 
             # 2. Quick Navigation
             # Jump directly to your config folder to make edits
