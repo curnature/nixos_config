@@ -1,19 +1,15 @@
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
-  imports = [
-    # 1. Import the "Base" Hub (Everything shared)
-    ./base
+    # Note: We DO NOT import ./base or ./linux here.
+    # The "Profile" file (linux/gui.nix) handles the imports!
 
-    # 2. Import the "Linux" Hub (Linux specifics)
-    ./linux
-  ];
+    home = {
+        username = vars.username;
+        homeDirectory = "/home/${vars.username}";
+        stateVersion = vars.stateVersion;
+    };
 
-  home = {
-    username = vars.username;
-    homeDirectory = "/home/${vars.username}";
-    stateVersion = vars.stateVersion;
-  };
-
-  programs.home-manager.enable = true;
+    # Let Home Manager manage itself
+    programs.home-manager.enable = true;
 }
