@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, vars, ... }:
 
 {
   imports = [
@@ -10,9 +10,9 @@
   ];
 
   home = {
-    inherit username;
-    homeDirectory = "/home/${username}";
-    stateVersion = "24.11";
+    username = vars.username;
+    homeDirectory = "/home/${vars.username}";
+    stateVersion = vars.stateVersion;
   };
 
   programs.home-manager.enable = true;

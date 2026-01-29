@@ -1,10 +1,12 @@
-{ lib, ... }:
-
 {
+  # Identity
   username = "curvature";
-  hostname = "omen"; # This needs to match your folder name in 'hosts/'
+  userEmail = "curnature00@gmail.com"; 
   
-  # You can add other global vars here if you want
-  stateVersion = "25.11"; 
-  isMinimal = false; # Example of a custom flag
+  # System Settings
+  terminal = "kitty";
+  editor = "vim";
+  
+  # Configuration Version
+  stateVersion = "24.11"; 
 }
