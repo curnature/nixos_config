@@ -21,14 +21,14 @@
                 "temperature" = {
                     # "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input", # critical for some laptops if auto-detect fails
                     "critical-threshold" = 80;
-                    "format" = "{icon} {temperatureC}°C";
+                    "format" = "  {icon} {temperatureC}°C";
                     "format-icons" = ["" "" ""]; # Low, Med, High icons
                 };
 
                 # 2. GPU Temperature (Custom script for Nvidia)
                 "custom/gpu-temp" = {
                     "exec" = "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader";
-                    "format" = "  {}°C";
+                    "format" = "󰍹  {}°C";
                     "interval" = 5;
                 };
 
