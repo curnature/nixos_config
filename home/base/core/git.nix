@@ -8,9 +8,8 @@
                 name = vars.username;
                 email = vars.userEmail;
             };
-        };
-        extraConfig = {
+            
             init.defaultBranch = "main";
         };
-    };
+   };
 }

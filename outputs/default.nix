@@ -1,4 +1,4 @@
-{ self, nixpkgs, home-manager, ... }@inputs:
+{ self, nixpkgs, home-manager, plasma-manager, ... }@inputs:
 
 let
     # -------------------------------------------------------------------------

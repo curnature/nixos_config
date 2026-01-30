@@ -35,7 +35,13 @@
         # ---------------------------------------------------------------------
         # 4. Plugins & Extras
         # ---------------------------------------------------------------------
+
         # nixvim = { ... }; # Uncomment when ready to migrate Neovim
+        plasma-manager = {
+            url = "github:nix-community/plasma-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.home-manager.follows = "home-manager";
+        };  
     };
 
     # Pass ALL inputs to the 'outputs' directory to keep this file clean

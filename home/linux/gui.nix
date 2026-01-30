@@ -1,4 +1,4 @@
-{ pkgs, vars, ... }:
+{ pkgs, vars, inputs, ... }:
 
 {
     imports = [
@@ -21,5 +21,8 @@
         ./base 
         # Load Linux-only GUI apps
         ./gui  
+
+        # ADD THIS: The Plasma Manager Module
+        inputs.plasma-manager.homeModules.plasma-manager  
     ];
 }
