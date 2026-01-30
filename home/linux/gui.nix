@@ -25,6 +25,7 @@
         # ADD THIS: The Plasma Manager Module
         inputs.plasma-manager.homeModules.plasma-manager  
         
-        inputs.catppuccin.homeModules.catppuccin  
+        # handle all theme by /base/core/theme.nix
+        # inputs.catppuccin.homeModules.catppuccin  
     ];
 }

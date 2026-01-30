@@ -28,6 +28,11 @@ let
             # A. Host-Specific Configuration (Hardware, Drivers, etc.)
             ../hosts/${hostname}/default.nix
 
+            # --- ADD THIS LINE HERE ---
+            # This installs the Catppuccin system module (SDDM, TTY, GRUB)
+            inputs.catppuccin.nixosModules.catppuccin
+            # --------------------------
+
             # B. Home Manager Integration (Shared User Config)
             home-manager.nixosModules.home-manager
             {

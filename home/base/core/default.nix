@@ -7,6 +7,7 @@
         ./vim.nix
         ./zsh.nix
         ./fastfetch.nix
+        ./theme.nix
     ];
 
     # Set default environment variables here

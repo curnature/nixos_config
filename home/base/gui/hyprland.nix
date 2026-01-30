@@ -23,11 +23,12 @@ let
   '';
 in
 {
-    catppuccin = {
-        enable = true;
-        flavor = "mocha";
-        accent = "lavender";
-    };
+    # DELETE THIS BLOCK (Moved to /base/core/theme.nix)
+    # catppuccin = {
+    #     enable = true;
+    #     flavor = "mocha";
+    #     accent = "lavender";
+    # };
 
     # Keep the service enabled (so it installs the binary)
     # But we will mostly rely on the script below to do the heavy lifting.

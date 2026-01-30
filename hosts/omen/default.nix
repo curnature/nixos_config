@@ -13,6 +13,7 @@
         ../../nixos/nix.nix
         ../../nixos/time_lang.nix
         ../../nixos/network.nix
+        ../../nixos/theme.nix
         ../../nixos/graphics.nix
         ../../nixos/audio.nix
         ../../nixos/user.nix

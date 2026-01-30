@@ -18,7 +18,7 @@
       iconTheme = "Papirus-Dark";
       
       # Set your wallpaper automatically!
-      wallpaper = "${../../../wallpapers/plana_bg4_2560_1440.jpg}"; 
+      wallpaper = "${../../../wallpapers/plana_bg2_2560_1440.jpg}"; 
     };
 
     # 2. Panels (The Taskbar)
