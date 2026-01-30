@@ -24,5 +24,7 @@
 
         # ADD THIS: The Plasma Manager Module
         inputs.plasma-manager.homeModules.plasma-manager  
+        
+        inputs.catppuccin.homeModules.catppuccin  
     ];
 }

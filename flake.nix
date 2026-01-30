@@ -41,7 +41,9 @@
             url = "github:nix-community/plasma-manager";
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
-        };  
+        };
+        
+        catppuccin.url = "github:catppuccin/nix";
     };
 
     # Pass ALL inputs to the 'outputs' directory to keep this file clean
