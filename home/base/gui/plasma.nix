@@ -9,7 +9,12 @@
       clickItemTo = "select"; # Single click select, double click open
       lookAndFeel = "Catppuccin-Mocha-Lavender";
       colorScheme = "CatppuccinMochaLavender"; 
-      cursor.theme = "catppuccin-mocha-lavender-cursors";
+      cursor = {
+          cursorFeedback = "Bouncing";
+          size = 24;
+          taskManagerFeedback = true;
+          theme = "catppuccin-mocha-lavender-cursors";
+      };
       iconTheme = "Papirus-Dark";
       
       # Set your wallpaper automatically!
