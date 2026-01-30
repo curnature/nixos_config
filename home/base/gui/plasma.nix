@@ -13,7 +13,7 @@
       iconTheme = "Papirus-Dark";
       
       # Set your wallpaper automatically!
-      wallpaper = "${../../../nixos/plana_bg_2560_1440.png}"; 
+      wallpaper = "${../../../wallpapers/plana_bg4_2560_1440.png}"; 
     };
 
     # 2. Panels (The Taskbar)

@@ -14,7 +14,7 @@
             font  = "CommitMono Nerd Font";
             fontSize = "14";
             # FIX 3: Use the README's suggested syntax for the image
-            background = "${./plana_bg_2560_1440.png}";
+            background = "${./../wallpapers/plana_bg_2560_1440.png}";
             loginBackground = true;
         })
     ];
