@@ -5,8 +5,7 @@
         enable = true;
 
         font = {
-            # "Cousine Nerd Font" is the actual font name installed by the package 'nerd-fonts.cousine'
-            name = "Cousine Nerd Font";
+            name = "CommitMono Nerd Font";
             size = 14;
         };
 
@@ -19,4 +18,10 @@
             enable_audio_bell = false;
         };
     };
+
+    # OPTIONAL: Explicitly configure Catppuccin for Kitty
+    # catppuccin.kitty = {
+    #     enable = true; 
+    #     flavor = "mocha"; 
+    # };    
 }

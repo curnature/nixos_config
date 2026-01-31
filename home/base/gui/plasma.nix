@@ -38,12 +38,23 @@
       }
     ];
     
-    # ADD THIS: The "Plasma Manager Way" to force NumLock
-    # This replaces the old manual file we made earlier.
-    configFile = {
-      "kcminputrc"."Keyboard"."NumLock" = 0;
+    # System Settings > Keyboard > Keyboard
+    input.keyboard = {
+      numlockOnStartup = "on";
+      # options = ["ctrl:nocaps"];
     };
-    
+
+    # System Settings > Screen Locking > Configure Appearance
+    kscreenlocker = {
+      appearance = {
+        showMediaControls = false;
+        # wallpaperPictureOfTheDay.provider = "bing";
+      };
+      appearance.wallpaper = "${../../../wallpapers/plana_bg4_2560_1440.jpg}";
+      # autoLock = false;
+      # timeout = 0;
+    };
+
     # 3. Window Rules (Optional)
     # Example: Always open Kitty transparently? 
     # (You usually do this in Kitty config, but KWin can force it too)
