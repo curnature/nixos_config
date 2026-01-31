@@ -1,7 +1,7 @@
 { pkgs,  ... }:
 {
     imports = [
-        ./terminal/kitty.nix
+        ./terminal
         ./hyprland.nix
         ./waybar.nix
         ./plasma.nix
@@ -10,5 +10,7 @@
 
     home.packages = with pkgs; [
         
-    ];  
+    ]; 
+
+
 }

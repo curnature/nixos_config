@@ -44,7 +44,12 @@
         nerd-fonts.cousine
         nerd-fonts.commit-mono
 
+        # Replace NixVim with VSCode, no need to configure Neovim if VSCode can do it all
         # NixVim (From Flake Inputs)
         #inputs.nixvim.packages.${pkgs.system}.default
+
+        # VSCode exteision requirements
+        nixpkgs-fmt # for formatting nix files
+        texlive.combined.scheme-full # for LaTeX Workshop extension
     ];
 }
