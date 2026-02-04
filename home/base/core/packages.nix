@@ -6,7 +6,6 @@
 
     home.packages = with pkgs; [
         # System Tools
-        lm_sensors
         unzip
         zip
         ripgrep
@@ -40,9 +39,6 @@
         # Fun
         pay-respects
 
-        # Fonts
-        nerd-fonts.cousine
-        nerd-fonts.commit-mono
 
         # Replace NixVim with VSCode, no need to configure Neovim if VSCode can do it all
         # NixVim (From Flake Inputs)
@@ -50,6 +46,5 @@
 
         # VSCode exteision requirements
         nixpkgs-fmt # for formatting nix files
-        texlive.combined.scheme-full # for LaTeX Workshop extension
     ];
 }

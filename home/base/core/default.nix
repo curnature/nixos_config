@@ -8,6 +8,8 @@
         ./zsh.nix
         ./fastfetch.nix
         ./theme.nix
+        ./fonts.nix
+        ./latex.nix
     ];
 
     # Set default environment variables here

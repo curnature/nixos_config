@@ -33,5 +33,6 @@
         
         # Icons
         catppuccin-papirus-folders
+        # candy-icons
     ];
 }

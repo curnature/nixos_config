@@ -2,7 +2,7 @@
 
 {
     programs.hyprland = {
-        enable = true;
+        enable = false;
         xwayland.enable = true; # Allow X11 apps to run
     };
 

@@ -44,6 +44,10 @@
         };
         
         catppuccin.url = "github:catppuccin/nix";
+
+        # niri + noctalia
+        niri.url = "github:sodiboo/niri-flake";
+        noctalia.url = "github:noctalia-dev/noctalia-shell";
     };
 
     # Pass ALL inputs to the 'outputs' directory to keep this file clean

@@ -19,7 +19,8 @@
         ../../nixos/user.nix
         ../../nixos/root_pkgs.nix
         ../../nixos/zsh.nix
-        ../../nixos/hyprland.nix  
+        ../../nixos/hyprland.nix 
+        ../../nixos/niri.nix 
         
     ];
 

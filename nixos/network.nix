@@ -16,4 +16,10 @@
 
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
+
+    # --- ADD THIS BLOCK ---
+    hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = true;
+    };
 }
