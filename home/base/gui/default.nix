@@ -4,12 +4,12 @@
         ./terminal
         ./hyprland.nix
         ./waybar.nix
-        ./plasma.nix
+        # ./plasma.nix
         ./vscode.nix
         ./mpv.nix 
-
-        ./niri
-        ./noctalia 
+        # move to home/linux/gui/
+        # ./niri
+        # ./noctalia 
     ];
 
     home.packages = with pkgs; [

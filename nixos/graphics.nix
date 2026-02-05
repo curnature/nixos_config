@@ -11,7 +11,8 @@
         enable = true;
         wayland.enable = true;
         autoNumlock = true;
-    
+
+   
         # Remove the 'catppuccin = { ... }' block from here!
     };
 
