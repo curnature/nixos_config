@@ -7,5 +7,6 @@
         ./noctalia
         ./plasma.nix
         ./fcitx5
+        ./gimp
     ];
 }
