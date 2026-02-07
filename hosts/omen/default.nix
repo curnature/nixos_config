@@ -20,7 +20,8 @@
         ../../nixos/root_pkgs.nix
         ../../nixos/zsh.nix
         ../../nixos/hyprland.nix 
-        ../../nixos/niri.nix 
+        ../../nixos/niri.nix
+        ../../nixos/power.nix 
         
     ];
 

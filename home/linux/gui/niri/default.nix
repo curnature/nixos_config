@@ -10,7 +10,6 @@
         slurp        # Region selector
         wl-clipboard # Clipboard utility
         swappy       # (Optional) A quick editor to draw arrows/crop before saving
-        bluez  # Adds 'bluetoothctl' command
     ];
     # ------------------------
 

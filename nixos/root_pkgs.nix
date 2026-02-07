@@ -12,11 +12,28 @@
         # Core Tools
         nano
         vim
+        
         wget
         git
+        
         file
         tree
         lshw
+
+        # --- AUTHENTICATION ---
+        # Needed so apps can ask for "Sudo" password graphically
+        kdePackages.polkit-kde-agent-1
+
+        lm_sensors
+
+        # You can add other Linux-only CLI tools here later, like:
+        pciutils   # lspci
+        usbutils   # lsusb
+        powertop   # Power analysis
+
+        # --- UTILITIES ---
+        udiskie          # Auto-mounts USB sticks (Optional, good if you use USBs often)
+        bluez  # Adds 'bluetoothctl' command
 
         # Management
         home-manager

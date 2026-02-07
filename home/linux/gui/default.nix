@@ -6,5 +6,6 @@
         ./niri
         ./noctalia
         ./plasma.nix
+        ./fcitx5
     ];
 }

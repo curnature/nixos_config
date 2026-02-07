@@ -2,8 +2,8 @@
 {
     imports = [
         ./terminal
-        ./hyprland.nix
-        ./waybar.nix
+        # ./hyprland.nix
+        # ./waybar.nix
         # ./plasma.nix
         ./vscode.nix
         ./mpv.nix 

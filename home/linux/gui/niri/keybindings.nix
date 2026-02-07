@@ -6,7 +6,7 @@
     "Ctrl+Alt+Delete".action.quit = {};
     "Mod+Q".action.close-window = {};
     "Mod+Shift+P".action.power-off-monitors = {};
-    # "Mod+K".action.spawn = "kitty";
+    "Mod+T".action.spawn = "kitty";
    
     # "Panic Button" to fix stuck apps
     "Mod+Escape".action.toggle-keyboard-shortcuts-inhibit = {}; 
@@ -16,8 +16,8 @@
     "Mod+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
     # "XF86Search".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
     
-    "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
-    "Mod+E".action.spawn = ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
+    "Mod+C".action.spawn = ["noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
+    "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
     "Mod+Shift+V".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "clipboard"];
     # "Mod+C".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "calculator"];
 
