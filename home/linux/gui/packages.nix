@@ -15,5 +15,10 @@
     # --- PDF TOOLS ---
     kdePackages.okular  # The best PDF reader (Qt6 version)
     pdfarranger         # Tool to merge, split, and rotate PDF pages
+
+    # --- CHAT ---
+    qq
+    wechat-uos
+    vesktop
   ];
 }

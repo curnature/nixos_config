@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     catppuccin.fcitx5.enable = true;
@@ -72,14 +72,21 @@
     };
 
     # Optional: Force Fcitx5 to be the default for everything
-    home.sessionVariables = {
-        GTK_IM_MODULE = "fcitx";
-        QT_IM_MODULE = "fcitx";
-        XMODIFIERS = "@im=fcitx";
-        SDL_IM_MODULE = "fcitx"; # Helps with some games
-    };
+    # home.sessionVariables = {
+        # GTK_IM_MODULE = "fcitx";
+        # QT_IM_MODULE = "fcitx";
+        # XMODIFIERS = "@im=fcitx";
+        # SDL_IM_MODULE = "fcitx"; # Helps with some games
+    # };
     
     
-
+    # This script runs every time you rebuild, forcing KDE to use Fcitx5
+    home.activation.configure-fcitx-wayland = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      run ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 \
+        --file kwinrc \
+        --group Wayland \
+        --key InputMethod \
+        /run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop
+    '';
     
 }

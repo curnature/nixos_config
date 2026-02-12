@@ -8,6 +8,7 @@
         username = vars.username;
         homeDirectory = "/home/${vars.username}";
         stateVersion = vars.stateVersion;
+        sessionVariables = { NIXOS_OZONE_WL = "1"; }; # Forces Electron apps (VS Code, QQ, WeChat, Obsidian) to use Wayland
     };
 
     # Let Home Manager manage itself

@@ -6,8 +6,13 @@
     "Ctrl+Alt+Delete".action.quit = {};
     "Mod+Q".action.close-window = {};
     "Mod+Shift+P".action.power-off-monitors = {};
+    "Alt+Tab".action.toggle-overview = {};
+    "Ctrl+Shift+Escape".action.spawn = "mission-center";
+    
     "Mod+T".action.spawn = "kitty";
-   
+    "Mod+E".action.spawn = "dolphin";
+
+
     # "Panic Button" to fix stuck apps
     "Mod+Escape".action.toggle-keyboard-shortcuts-inhibit = {}; 
 
@@ -91,23 +96,23 @@
     "Mod+1".action.focus-workspace = "1terminal";
     "Mod+2".action.focus-workspace = "2browser";
     "Mod+3".action.focus-workspace = "3chat";
-    "Mod+4".action.focus-workspace = "4music";
-    "Mod+5".action.focus-workspace = "5mail";
-    "Mod+6".action.focus-workspace = "6file";
-    "Mod+7".action.focus-workspace = 7;
-    "Mod+8".action.focus-workspace = 8;
-    "Mod+9".action.focus-workspace = 9;
+    "Mod+4".action.focus-workspace = "4file";
+    "Mod+5".action.focus-workspace = "5game";
+    "Mod+6".action.focus-workspace = "6";
+    "Mod+7".action.focus-workspace = "7";
+    "Mod+8".action.focus-workspace = "8";
+    "Mod+9".action.focus-workspace = "9";
     "Mod+0".action.focus-workspace = "0other";
 
     "Mod+Ctrl+1".action.move-column-to-workspace = "1terminal";
     "Mod+Ctrl+2".action.move-column-to-workspace = "2browser";
     "Mod+Ctrl+3".action.move-column-to-workspace = "3chat";
-    "Mod+Ctrl+4".action.move-column-to-workspace = "4music";
-    "Mod+Ctrl+5".action.move-column-to-workspace = "5mail";
-    "Mod+Ctrl+6".action.move-column-to-workspace = "6file";
-    "Mod+Ctrl+7".action.move-column-to-workspace = 7;
-    "Mod+Ctrl+8".action.move-column-to-workspace = 8;
-    "Mod+Ctrl+9".action.move-column-to-workspace = 9;
+    "Mod+Ctrl+4".action.move-column-to-workspace = "4file";
+    "Mod+Ctrl+5".action.move-column-to-workspace = "5game";
+    "Mod+Ctrl+6".action.move-column-to-workspace = "6";
+    "Mod+Ctrl+7".action.move-column-to-workspace = "7";
+    "Mod+Ctrl+8".action.move-column-to-workspace = "8";
+    "Mod+Ctrl+9".action.move-column-to-workspace = "9";
     "Mod+Ctrl+0".action.move-column-to-workspace = "0other";
 
     # --- 8. Column Layout Operations ---

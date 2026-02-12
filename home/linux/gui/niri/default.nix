@@ -2,7 +2,10 @@
 
 {
     # Import the keybindings file so they are merged together
-    imports = [ ./keybindings.nix ];
+    imports = [ 
+        ./keybindings.nix 
+        ./visual.nix
+    ];
 
     # --- ADD THIS SECTION ---
     home.packages = with pkgs; [
@@ -33,26 +36,6 @@
                     # };
                 };
             }; 
-
-            # --- 2. Layout & Look ---
-            # layout = {
-                # gaps = 16;
-                # center-focused-column = "never";
-
-                # preset-column-widths = [
-                    # { proportion = 1.0 / 3.0; }
-                    # { proportion = 1.0 / 2.0; }
-                    # { proportion = 2.0 / 3.0; }
-                # ];
-
-                # default-column-width = { proportion = 1.0 / 2.0; };
-
-                # focus-ring = {
-                    # width = 4;
-                    # active.color = "#7fc8ff";
-                    # inactive.color = "#505050";
-                # };
-            # };
 
             # --- 3. Noctalia Integration ---
             # Allow Noctalia to control windows (Essential for dock/launcher)
@@ -94,12 +77,6 @@
             #        open-on-workspace = "3chat";
             #    }
 
-            # Terminals -> Workspace 1
-            #    {
-            #        matches = [ { app-id = "^(foot|Alacritty|kitty)$"; } ];
-            #        open-on-workspace = "1terminal";
-            #    }
-            # ];
         };
     };
 }
