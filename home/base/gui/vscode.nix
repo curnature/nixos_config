@@ -1,6 +1,15 @@
 { pkgs, ... }:
 
 {
+    # 1. Install the Language Server Binaries Globally
+    # These are the actual programs that analyze your code.
+    home.packages = with pkgs; [
+        nil           # Nix Language Server (The brain for Nix files)
+        nixpkgs-fmt   # Nix Code Formatter
+        # Note: Python (python3) and Fortran (fortls) come from your 
+        # project's 'nix develop' shell, so we don't install them globally here.
+    ];
+
     programs.vscode = {
         enable = true;
         package = pkgs.vscode;
@@ -30,9 +39,18 @@
             anthropic.claude-code
 
             # nix 
-            bbenoist.nix
+            # bbenoist.nix
+            jnoortheen.nix-ide
+            
             # latex 
             james-yu.latex-workshop
+
+            # fortran
+            fortran-lang.linter-gfortran
+
+            # python
+            ms-python.python # Note: On NixOS, we rely on the open-source logic or the environment's python.
+
         ];
 
         # These settings are "locked" by Nix. 
@@ -51,17 +69,31 @@
                 "terminal.background" = "#00000000";
             };
 
-            # -----------------------------------------------------------------
-            # NIX (Using bbenoist.nix + standard formatter)
-            # -----------------------------------------------------------------
-            # Nix standard is 2 spaces. Don't use tabs!
-            "[nix]" = {
-                "editor.tabSize" = 4; # I prefer 4 spaces for Nix files
-                "editor.insertSpaces" = true;
-                "editor.formatOnSave" = true; 
+            # --- NIX IDE SETTINGS (The "Nil" setup) ---
+            "nix.enableLanguageServer" = true;
+            "nix.serverPath" = "nil"; 
+            "nix.serverSettings" = {
+                "nil" = {
+                    "formatting" = { "command" = [ "nixpkgs-fmt" ]; };
+                };
             };
-            # Note: You need a formatter installed in your system packages (e.g., 'nixpkgs-fmt' or 'alejandra')
-            "nix.enableLanguageServer" = true; # If you decide to add 'nil' later
+            # Auto-format Nix files on save
+            "[nix]" = {
+                "editor.defaultFormatter" = "jnoortheen.nix-ide";
+                "editor.formatOnSave" = true; 
+                "editor.tabSize" = 4;
+            };
+
+            # --- FORTRAN SETTINGS ---
+            # Tell VS Code to look for 'fortls' (Language Server) and 'gfortran'
+            # These will be provided by your 'nix develop' shell.
+            "fortran.fortls.path" = "fortls";
+            "fortran.linter.compiler" = "gfortran";
+            "fortran.formatting.formatter" = "fprettify"; # We added this to your flake too!
+
+            # --- PYTHON SETTINGS ---
+            # Ensure it uses the Python from the active environment
+            "python.defaultInterpreterPath" = "python";
 
             # -----------------------------------------------------------------
             # LATEX WORKSHOP (james-yu.latex-workshop)
