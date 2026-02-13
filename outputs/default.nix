@@ -70,4 +70,18 @@ in
     # -------------------------------------------------------------------------
     # Formatter for the codebase (run 'nix fmt')
     formatter.${system} = pkgs.nixfmt-rfc-style;
+
+    # Development shell with tools for building and testing the configuration
+    templates = {
+        python = {
+            path = ../templates/python;
+            description = "Python Environment";
+        };
+
+        fortran = {
+            path = ../templates/fortran;
+            description = "Fortran 90 + OpenMPI Environment";
+        };
+   
+    };
 }
