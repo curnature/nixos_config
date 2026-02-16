@@ -21,7 +21,8 @@
         ../../nixos/zsh.nix
         ../../nixos/hyprland.nix 
         ../../nixos/niri.nix
-        ../../nixos/power.nix 
+        ../../nixos/power.nix
+        ../../nixos/steam.nix 
         
     ];
 

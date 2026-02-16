@@ -13,6 +13,7 @@
         slurp        # Region selector
         wl-clipboard # Clipboard utility
         swappy       # (Optional) A quick editor to draw arrows/crop before saving
+        xwayland-satellite
     ];
     # ------------------------
 
@@ -22,8 +23,15 @@
         settings = {
             # --- 1. Startup ---
             spawn-at-startup = [
+                { command = ["xwayland-satellite"]; }
                 { command = ["noctalia-shell"]; }
             ];
+
+            # --- CHANGE 3: Tell Steam where X11 is ---
+            # Since Niri is pure Wayland, it doesn't set this by default.
+            environment = {
+                DISPLAY = ":0";
+            };
 
             input = {
                 keyboard = {
