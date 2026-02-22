@@ -102,7 +102,7 @@
     "Mod+7".action.focus-workspace = "7";
     "Mod+8".action.focus-workspace = "8";
     "Mod+9".action.focus-workspace = "9";
-    "Mod+0".action.focus-workspace = "0other";
+    "Mod+0".action.focus-workspace = "0system";
 
     "Mod+Ctrl+1".action.move-column-to-workspace = "1terminal";
     "Mod+Ctrl+2".action.move-column-to-workspace = "2browser";
@@ -113,7 +113,7 @@
     "Mod+Ctrl+7".action.move-column-to-workspace = "7";
     "Mod+Ctrl+8".action.move-column-to-workspace = "8";
     "Mod+Ctrl+9".action.move-column-to-workspace = "9";
-    "Mod+Ctrl+0".action.move-column-to-workspace = "0other";
+    "Mod+Ctrl+0".action.move-column-to-workspace = "0system";
 
     # --- 8. Column Layout Operations ---
     "Mod+BracketLeft".action.consume-or-expel-window-left = {};

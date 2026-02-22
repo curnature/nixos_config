@@ -30,9 +30,29 @@
             # 4. Garbage Collection
             # Quickly clear space by deleting old generations
             gc = "nix-collect-garbage --delete-old";
+
+            # ==========================================
+            # 5. Modern TUI Replacements
+            # ==========================================
             
-            # 5. Standard Shortcuts
-            ll = "ls -l";
+            # eza: The better 'ls'
+            ls = "eza --icons=auto";
+            ll = "eza -l --icons=auto";
+            la = "eza -la --icons=auto";
+            tree = "eza --tree --icons=auto";
+
+            # bat: The better 'cat'
+            cat = "bat";
+
+            # zoxide: The smarter 'cd'
+            cd = "z";
+
+            # lazygit: Quick launch
+            lg = "lazygit";
+
+            # ripgrep & fd: Better search/find
+            grep = "rg";
+            find = "fd";    
         };
     };
 }

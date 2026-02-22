@@ -14,7 +14,7 @@
             "7" = {};            # Creates a workspace named "7"
             "8" = {};            # Creates a workspace named "8"
             "9" = {};            # Creates a workspace named "9"
-            "0other" = {};     # Creates a workspace named "0other"
+            "0system" = {};     # Creates a workspace named "0other"
         }; 
         
         # --- 2. Layout & Look ---
@@ -58,6 +58,7 @@
             {
                 matches = [ { app-id = "kitty"; } ];
                 open-on-workspace = "1terminal";
+                draw-border-with-background = false;
             }
 
 

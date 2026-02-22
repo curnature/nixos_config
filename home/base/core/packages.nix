@@ -8,14 +8,6 @@
         # System Tools
         unzip
         zip
-        ripgrep
-        fd
-        tldr
-        eza         # ls replacement
-        bat         # cat replacement
-        delta       # git diff viewer
-        zoxide      # cd replacement
-        fzf         # fuzzy finder
 
         # Media
         ffmpeg
@@ -28,8 +20,6 @@
         #google-chrome
 
         # Git / Dev
-        git-graph
-        gh          # GitHub CLI
     
         # Nix Tools
         nix-prefetch
