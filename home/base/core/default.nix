@@ -10,6 +10,7 @@
         ./theme.nix
         ./fonts.nix
         ./latex.nix
+        ./nvim.nix
     ];
 
     # Set default environment variables here

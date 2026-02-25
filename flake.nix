@@ -48,6 +48,8 @@
         # niri + noctalia
         niri.url = "github:sodiboo/niri-flake";
         noctalia.url = "github:noctalia-dev/noctalia-shell";
+
+        my-neovim.url = "github:curnature/NvimFlake";
     };
 
     # Pass ALL inputs to the 'outputs' directory to keep this file clean

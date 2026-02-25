@@ -7,6 +7,8 @@
         enableBashIntegration = true;
         enableZshIntegration = true;
         # enableNushellIntegration = true;
+
+        shellWrapperName = "y";
         
         # Changing working directory when exiting Yazi
         settings = {

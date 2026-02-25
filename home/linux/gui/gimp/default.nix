@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,7 +6,7 @@
     gimp-with-plugins  # Installs GIMP + common plugins (resynthesizer, etc.)
 
     # 2. Other useful tools we discussed
-    krita              # Modern painting/editing
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.krita  # Pinned to stable!              # Modern painting/editing
     inkscape           # Vector
   ];
 

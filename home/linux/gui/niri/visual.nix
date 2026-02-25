@@ -57,7 +57,7 @@
             
             {
                 matches = [ { app-id = "kitty"; } ];
-                open-on-workspace = "1terminal";
+                # open-on-workspace = "1terminal";
                 draw-border-with-background = false;
             }
 
@@ -70,12 +70,16 @@
             }
 
             # Chat -> Workspace 3
-            #    {
-            #        matches = [ 
-            #            { app-id = "^(wechat|QQ|telegram-desktop)$"; } 
-            #        ];
-            #        open-on-workspace = "3chat";
-            #    }
+            {
+                matches = [ { app-id = "QQ"; } ];
+                open-on-workspace = "3chat";
+            }
+
+            {
+                matches = [ { app-id = "wechat"; } ];
+                open-on-workspace = "3chat";
+            }
+            
         ]; 
     };
 
