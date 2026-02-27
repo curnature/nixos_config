@@ -16,8 +16,8 @@
             name = "python-science-env";
 
             # --- 1. The Python Environment ---
-            packages = [
-            (pkgs.python3.withPackages (ps: with ps; [
+            packages = with pkgs; [
+            (python3.withPackages (ps: with ps; [
                 # The "Big Three" for Science
                 numpy # Arrays & Matrix math
                 scipy # Numerical Integral, Linear Algebra, Optimization
@@ -46,8 +46,14 @@
             ]))
 
             # --- 2. System Tools (Optional) ---
-            pkgs.ruff # Extremely fast Python linter
-            pkgs.black # Code formatter
+            ruff # Extremely fast Python linter
+            black # Code formatter
+
+            # --- 3. Manim (Optional) ---
+            manim # Mathematical animation engine (for creating videos)
+            ffmpeg # Required for video rendering in Manim
+            texlive.combined.scheme-full # Required for rendering LaTeX in Manim
+
             ];
 
             # --- 3. Environment Configuration ---

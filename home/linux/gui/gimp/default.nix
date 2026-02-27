@@ -6,7 +6,8 @@
     gimp-with-plugins  # Installs GIMP + common plugins (resynthesizer, etc.)
 
     # 2. Other useful tools we discussed
-    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.krita  # Pinned to stable!              # Modern painting/editing
+    krita
+    # inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.krita  # Pinned to stable!              # Modern painting/editing
     inkscape           # Vector
   ];
 
