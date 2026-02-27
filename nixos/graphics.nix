@@ -19,7 +19,7 @@
     # 2. Catppuccin SDDM Configuration (MUST be at the root level)
     catppuccin.sddm = {
         enable = true;
-        background = ../wallpapers/plana_bg4_2560_1440.jpg;
+        background = ../wallpapers/BA_alicekey_bg8_2560_1440.png; # ../wallpapers/plana_bg4_2560_1440.jpg;
         font = "CommitMono Nerd Font";
         fontSize = "14";
         loginBackground = true;

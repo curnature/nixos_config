@@ -1,7 +1,7 @@
 { ... }:
 {
     home.file.".cache/noctalia/wallpapers.json".text = builtins.toJSON {
-        defaultWallpaper = "${../../../../wallpapers/plana_bg2_2560_1440.jpg}";
+        defaultWallpaper = "${../../../../wallpapers/BA_alicekey_bg3_2560_1440.png}";
         # If you have multiple monitors, you can specify them:
         # wallpapers = {
         #   "eDP-1" = "${../../../../wallpapers/laptop_bg.jpg}";

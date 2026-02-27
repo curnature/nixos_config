@@ -20,8 +20,8 @@
             theme = pkgs.fetchFromGitHub {
                 owner = "curnature";
                 repo = "grub";
-                rev = "338627da7c1b9d79b09f8e2f93af5492cdc1e0e6";
-                sha256 = "0spf02myz6dyg866li4wpcpwiq1xb61mw7xqiwjk5j43471xkxpi";
+                rev = "78e518ba69e4672e8e1e5191f2f7089527acb379";
+                sha256 = "0gq2qvhi5zqvs44dfrqrq4074ahjc5gcwkhmgdnvxxkw5byb9q0p";
 
                 # owner = "tsssni";
                 # repo = "plana.grub";
