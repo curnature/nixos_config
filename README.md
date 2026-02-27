@@ -25,6 +25,13 @@ This configuration wouldn't be possible without the incredible Nix community. Sp
 | **Text Editor** | Neovim [(Standalone Flake)](https://github.com/curnature/NvimFlake) / VS Code |
 | **Media** | mpv |
 
+## Examples
+
+<p align="center">
+  <img src="./templates/template1.png" width="45%" alt="NixOS Desktop Showcase 1" />
+  <img src="./templates/template2.png" width="45%" alt="NixOS Desktop Showcase 2" /> 
+</p>
+
 ## 🔴 IMPORTANT: You should NOT deploy this flake directly on your machine ❗
 
 It will not succeed. This flake contains my specific hardware configuration (such as `omen/hardware-configuration.nix` and Nvidia support) which is almost certainly not suitable for your hardware. 
