@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
     boot.loader = {
@@ -37,7 +37,7 @@
                     owner = "curnature";
                     repo = "grub";
                     rev = "abb4e0f5863ed45a047b2daf74d268fa069855f8";
-                    ha256 = "1c5ggmqm4xi654xxabxx7gj22qh6w1y14fhhbzrjch5fxk8y83ag";
+                    sha256 = "1c5ggmqm4xi654xxabxx7gj22qh6w1y14fhhbzrjch5fxk8y83ag";
                 };
 
                 # 2. Check the hostname to pick the correct config file
