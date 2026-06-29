@@ -38,7 +38,8 @@
             # ai tools
             github.copilot
             github.copilot-chat
-            anthropic.claude-code
+            openai.chatgpt
+            #anthropic.claude-code
 
             # nix 
             # bbenoist.nix
