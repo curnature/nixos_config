@@ -36,9 +36,9 @@
             })
 
             # ai tools
-            github.copilot
-            github.copilot-chat
-            openai.chatgpt
+            #github.copilot
+            #github.copilot-chat
+            #openai.chatgpt
             #anthropic.claude-code
 
             # nix 
