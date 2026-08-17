@@ -16,5 +16,5 @@
     # -------------------------------------------------------------------------
     # Determines the release version for state compatibility.
     # See: https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion
-    stateVersion = "25.11";
+    stateVersion = "26.05";
 }
