@@ -8,8 +8,6 @@
         nixpkgs-fmt # Nix Code Formatter
         # Note: Python (python3) and Fortran (fortls) come from your 
         # project's 'nix develop' shell, so we don't install them globally here.
-
-        claude-code # Anthropic's AI assistant for code generation and help
     ];
 
     programs.vscode = {
@@ -34,12 +32,6 @@
                 sha256 = "sha256-V7xVIC7HVsdX4rIAntFPsr/Z94LsnKq1/I8K8DtRtNA="; # I calculated this for you
                 };
             })
-
-            # ai tools
-            #github.copilot
-            #github.copilot-chat
-            #openai.chatgpt
-            #anthropic.claude-code
 
             # nix 
             # bbenoist.nix
@@ -71,8 +63,6 @@
             "workbench.colorCustomizations" = {
                 "terminal.background" = "#00000000";
             };
-
-            "claudeCode.useTerminal" = true;
 
             # -----------------------------------------------------------------
             # GLOBAL INDENTATION RULES (The "4-Space" Law)
