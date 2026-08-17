@@ -45,6 +45,9 @@
         
         catppuccin.url = "github:catppuccin/nix";
 
+        # AI coding agents (ChatGPT/Codex desktop, DeepSeek Harness, etc.)
+        llm-agents.url = "github:numtide/llm-agents.nix";
+
         # niri + noctalia
         niri.url = "github:sodiboo/niri-flake";
         noctalia.url = "github:noctalia-dev/noctalia-shell";

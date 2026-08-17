@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./ai.nix
         ./packages.nix
         ./niri
         ./noctalia
