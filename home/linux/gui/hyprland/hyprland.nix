@@ -1,26 +1,26 @@
 { pkgs, vars, ... }:
 let
-  # 1. Define the wallpaper path (Nix handles the store path)
-  wallpaperFile = ../../../wallpapers/plana_bg2_2560_1440.jpg;
+    # 1. Define the wallpaper path (Nix handles the store path)
+    wallpaperFile = ../../../wallpapers/plana_bg2_2560_1440.jpg;
 
-  # 2. Create a script to force-apply the wallpaper
-  # This matches the logic from the GitHub issue you shared.
-  forceWallpaper = pkgs.writeShellScript "force-wallpaper" ''
-    # Wait for Hyprland to fully initialize monitors
-    sleep 2
+    # 2. Create a script to force-apply the wallpaper
+    # This matches the logic from the GitHub issue you shared.
+    forceWallpaper = pkgs.writeShellScript "force-wallpaper" ''
+      # Wait for Hyprland to fully initialize monitors
+      sleep 2
 
-    # Start the daemon if it's not running, or reload it
-    if ! pgrep hyprpaper > /dev/null; then
-      ${pkgs.hyprpaper}/bin/hyprpaper &
-      sleep 1
-    fi
+      # Start the daemon if it's not running, or reload it
+      if ! pgrep hyprpaper > /dev/null; then
+        ${pkgs.hyprpaper}/bin/hyprpaper &
+        sleep 1
+      fi
 
-    # Force the wallpaper using hyprctl (IPC)
-    # This is more reliable than just the config file
-    ${pkgs.hyprland}/bin/hyprctl hyprpaper unload all
-    ${pkgs.hyprland}/bin/hyprctl hyprpaper preload "${wallpaperFile}"
-    ${pkgs.hyprland}/bin/hyprctl hyprpaper wallpaper ",${wallpaperFile}"
-  '';
+      # Force the wallpaper using hyprctl (IPC)
+      # This is more reliable than just the config file
+      ${pkgs.hyprland}/bin/hyprctl hyprpaper unload all
+      ${pkgs.hyprland}/bin/hyprctl hyprpaper preload "${wallpaperFile}"
+      ${pkgs.hyprland}/bin/hyprctl hyprpaper wallpaper ",${wallpaperFile}"
+    '';
 in
 {
     # DELETE THIS BLOCK (Moved to /base/core/theme.nix)
@@ -44,7 +44,7 @@ in
 
     wayland.windowManager.hyprland = {
         enable = true;
-        
+
         settings = {
             "$mod" = "SUPER";
             "$terminal" = "${vars.terminal}";
@@ -87,11 +87,11 @@ in
                 # SCREENSHOT BIND (Ctrl + Alt + a)
                 # 1. Runs 'slurp' to let you select an area
                 # 2. Runs 'grim' to save that area to a timestamped file in Pictures
-                "CTRL ALT, a, exec, grim -g \"$(slurp)\" ~/Pictures/screenshot_$(date +'%Y%m%d_%H%M%S').png"  
+                "CTRL ALT, a, exec, grim -g \"$(slurp)\" ~/Pictures/screenshot_$(date +'%Y%m%d_%H%M%S').png"
             ];
         };
     };
-    
+
     home.packages = with pkgs; [
         wofi
         dunst

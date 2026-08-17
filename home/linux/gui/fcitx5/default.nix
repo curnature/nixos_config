@@ -25,50 +25,49 @@
 
         # This automatically creates ~/.config/fcitx5/profile and config
         fcitx5.settings = {
-           # --- A. Input Method List (Profile) ---
-        inputMethod = {
-          "Groups/0" = {
-            "Name" = "Default";
-            "Default Layout" = "us";
-            "DefaultIM" = "keyboard-us";
-          };
-          "Groups/0/Items/0" = { "Name" = "keyboard-us"; "Layout" = ""; };
-          "Groups/0/Items/1" = { "Name" = "pinyin";      "Layout" = ""; };
-          "Groups/0/Items/2" = { "Name" = "mozc";        "Layout" = ""; };
-          "GroupOrder" = { "0" = "Default"; };
+            # --- A. Input Method List (Profile) ---
+            inputMethod = {
+                "Groups/0" = {
+                    "Name" = "Default";
+                    "Default Layout" = "us";
+                    "DefaultIM" = "keyboard-us";
+                };
+                "Groups/0/Items/0" = { "Name" = "keyboard-us"; "Layout" = ""; };
+                "Groups/0/Items/1" = { "Name" = "pinyin";      "Layout" = ""; };
+                "Groups/0/Items/2" = { "Name" = "mozc";        "Layout" = ""; };
+                "GroupOrder" = { "0" = "Default"; };
+            };
+
+            # --- B. Global Options (Config) ---
+            globalOptions = {
+                # 1. Standard Options (Simple strings/bools go here)
+                "Hotkey" = {
+                    EnumerateWithTriggerKeys = false;
+                    EnumerateSkipFirst = false;
+                };
+
+                # 2. Array Options (MUST be their own sections!)
+                "Hotkey/ToggleInputMethod" = {
+                    "0" = "Control+Space";
+                };
+
+                "Hotkey/EnumerateForwardKeys" = {
+                    "0" = "Alt+Shift_R";
+                };
+
+                "Hotkey/EnumerateBackwardKeys" = {
+                    "0" = "Alt+Shift_L";
+                };
+
+                Behavior = {
+                    ActiveByDefault = false;
+                    ShareInputState = "All";
+                    DefaultPageSize = 9;
+                    PreeditEnabledByDefault = true;
+                };
+            };
         };
 
-        # --- B. Global Options (Config) ---
-        globalOptions = {
-          # 1. Standard Options (Simple strings/bools go here)
-          "Hotkey" = {
-            EnumerateWithTriggerKeys = false;
-            EnumerateSkipFirst = false;
-          };
-
-          # 2. Array Options (MUST be their own sections!)
-          "Hotkey/ToggleInputMethod" = {
-            "0" = "Control+Space";
-          };
-
-          "Hotkey/EnumerateForwardKeys" = {
-            "0" = "Alt+Shift_R";
-          };
-
-          "Hotkey/EnumerateBackwardKeys" = {
-            "0" = "Alt+Shift_L";
-          };
-          
-          Behavior = {
-            ActiveByDefault = false;
-            ShareInputState = "All";
-            DefaultPageSize = 9;
-            PreeditEnabledByDefault = true;
-          }; 
-        }; 
-
-        };
-        
     };
 
     # Optional: Force Fcitx5 to be the default for everything
@@ -78,8 +77,8 @@
         # XMODIFIERS = "@im=fcitx";
         # SDL_IM_MODULE = "fcitx"; # Helps with some games
     # };
-    
-    
+
+
     # This script runs every time you rebuild, forcing KDE to use Fcitx5
     home.activation.configure-fcitx-wayland = lib.hm.dag.entryAfter ["writeBoundary"] ''
       run ${pkgs.kdePackages.kconfig}/bin/kwriteconfig6 \
@@ -88,5 +87,5 @@
         --key InputMethod \
         /run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop
     '';
-    
+
 }

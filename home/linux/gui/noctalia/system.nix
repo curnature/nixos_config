@@ -2,7 +2,7 @@
 {
     programs.noctalia-shell.settings = {
         general = {
-      # Critical system settings
+            # Critical system settings
             avatarImage = "";
             dimmerOpacity = 0.2;
             showScreenCorners = false;
@@ -104,7 +104,7 @@
             preferredPlayer = "";
             volumeFeedback = false;
         };
-    
+
         osd = {
             enabled = true;
             location = "top_right";
@@ -123,7 +123,7 @@
             brightnessStep = 3;
             enforceMinimum = true;
             enableDdcSupport = false;
-        }; 
+        };
 
         location = {
             name = "Tokyo";

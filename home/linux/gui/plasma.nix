@@ -1,62 +1,62 @@
 { pkgs, ... }:
 {
-  # Enable the Plasma Manager
-  programs.plasma = {
-    enable = true;
+    # Enable the Plasma Manager
+    programs.plasma = {
+        enable = true;
 
-    # 1. The Theme
-    workspace = {
-      clickItemTo = "select"; # Single click select, double click open
-      lookAndFeel = "Catppuccin-Mocha-Lavender";
-      colorScheme = "CatppuccinMochaLavender"; 
-      cursor = {
-          cursorFeedback = "Bouncing";
-          size = 24;
-          taskManagerFeedback = true;
-          theme = "catppuccin-mocha-lavender-cursors";
-      };
-      iconTheme = "Papirus-Dark";
-      
-      # Set your wallpaper automatically!
-      wallpaper = "${../../../wallpapers/plana_bg2_2560_1440.jpg}"; 
-    };
+        # 1. The Theme
+        workspace = {
+            clickItemTo = "select"; # Single click select, double click open
+            lookAndFeel = "Catppuccin-Mocha-Lavender";
+            colorScheme = "CatppuccinMochaLavender";
+            cursor = {
+                cursorFeedback = "Bouncing";
+                size = 24;
+                taskManagerFeedback = true;
+                theme = "catppuccin-mocha-lavender-cursors";
+            };
+            iconTheme = "Papirus-Dark";
 
-    # 2. Panels (The Taskbar)
-    # This replaces your bottom panel with a declaratively defined one
-    panels = [
-      {
-        location = "bottom";
-        height = 44;
-        widgets = [
-          "org.kde.plasma.kickoff"          # Start Menu
-          "org.kde.plasma.pager"            # Workspaces
-          "org.kde.plasma.icontasks"        # Taskbar
-          "org.kde.plasma.marginsseparator" # Spacer
-          "org.kde.plasma.systemtray"       # Tray Icons
-          "org.kde.plasma.digitalclock"     # Clock
+            # Set your wallpaper automatically!
+            wallpaper = "${../../../wallpapers/plana_bg2_2560_1440.jpg}";
+        };
+
+        # 2. Panels (The Taskbar)
+        # This replaces your bottom panel with a declaratively defined one
+        panels = [
+            {
+                location = "bottom";
+                height = 44;
+                widgets = [
+                    "org.kde.plasma.kickoff"          # Start Menu
+                    "org.kde.plasma.pager"            # Workspaces
+                    "org.kde.plasma.icontasks"        # Taskbar
+                    "org.kde.plasma.marginsseparator" # Spacer
+                    "org.kde.plasma.systemtray"       # Tray Icons
+                    "org.kde.plasma.digitalclock"     # Clock
+                ];
+            }
         ];
-      }
-    ];
-    
-    # System Settings > Keyboard > Keyboard
-    input.keyboard = {
-      numlockOnStartup = "on";
-      # options = ["ctrl:nocaps"];
-    };
 
-    # System Settings > Screen Locking > Configure Appearance
-    kscreenlocker = {
-      appearance = {
-        showMediaControls = false;
-        # wallpaperPictureOfTheDay.provider = "bing";
-      };
-      appearance.wallpaper = "${../../../wallpapers/plana_bg4_2560_1440.jpg}";
-      # autoLock = false;
-      # timeout = 0;
-    };
+        # System Settings > Keyboard > Keyboard
+        input.keyboard = {
+            numlockOnStartup = "on";
+            # options = ["ctrl:nocaps"];
+        };
 
-    # 3. Window Rules (Optional)
-    # Example: Always open Kitty transparently? 
-    # (You usually do this in Kitty config, but KWin can force it too)
-  };
+        # System Settings > Screen Locking > Configure Appearance
+        kscreenlocker = {
+            appearance = {
+                showMediaControls = false;
+                # wallpaperPictureOfTheDay.provider = "bing";
+            };
+            appearance.wallpaper = "${../../../wallpapers/plana_bg4_2560_1440.jpg}";
+            # autoLock = false;
+            # timeout = 0;
+        };
+
+        # 3. Window Rules (Optional)
+        # Example: Always open Kitty transparently?
+        # (You usually do this in Kitty config, but KWin can force it too)
+    };
 }

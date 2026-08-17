@@ -19,12 +19,12 @@ set nocompatible
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 if has('filetype')
-  filetype indent plugin on
+    filetype indent plugin on
 endif
 
 " Enable syntax highlighting
 if has('syntax')
-  syntax on
+    syntax on
 endif
 
 "------------------------------------------------------------
@@ -139,7 +139,7 @@ set t_vb=
 
 " Enable use of the mouse for all modes
 if has('mouse')
-  set mouse=a
+    set mouse=a
 endif
 
 " Set the command window height to 2 lines, to avoid many cases of having to
