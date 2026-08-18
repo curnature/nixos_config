@@ -82,6 +82,11 @@ in
             path = ../templates/fortran;
             description = "Fortran 90 + OpenMPI Environment";
         };
+
+        nodejs = {
+            path = ../templates/nodejs;
+            description = "Node.js 24 DSH Plugin Development Environment";
+        };
    
     };
 }
