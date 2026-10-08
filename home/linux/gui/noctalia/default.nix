@@ -23,7 +23,7 @@
     };
 
     # We inject this variable specifically into the systemd service.
-    systemd.user.services.noctalia-shell.Service.Environment = lib.mkForce [
+    systemd.user.services.noctalia.Service.Environment = lib.mkForce [
         "QT_QPA_PLATFORMTHEME=qt6ct"
         # Optional: Fixes scaling if icons look tiny/huge
         # "QT_AUTO_SCREEN_SCALE_FACTOR=1" 
