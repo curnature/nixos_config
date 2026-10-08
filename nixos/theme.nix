@@ -4,7 +4,12 @@
     # 1. Global System Theme
     # This themes the TTY (boot console), GRUB, and SDDM defaults automatically!
     catppuccin = {
+        # Old setting:
+        # enable = true;
+        # A single `enable` flag implicitly auto-enabled every integration. That
+        # behavior is deprecated, so the global toggle and enrollment are now explicit.
         enable = true;
+        autoEnable = true;
         flavor = "mocha";
         accent = "lavender"; # Syncs with your Hyprland
     

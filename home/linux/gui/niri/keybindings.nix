@@ -17,14 +17,20 @@
         "Mod+Escape".action.toggle-keyboard-shortcuts-inhibit = {};
 
         # --- 2. Noctalia Integration ---
+        # Outdated: Noctalia v4 used `noctalia-shell ipc call`. Restore these
+        # commands only when rolling the package and configuration back to v4.
         # "Mod+D".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
-        "Mod+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
+        # "Mod+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
         # "XF86Search".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
+        "Mod+Space".action.spawn = [ "noctalia" "msg" "panel-toggle" "launcher" ];
 
-        "Mod+C".action.spawn = ["noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
-        "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
-        "Mod+Shift+V".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "clipboard"];
+        # "Mod+C".action.spawn = ["noctalia-shell" "ipc" "call" "controlCenter" "toggle"];
+        # "Mod+S".action.spawn = ["noctalia-shell" "ipc" "call" "sessionMenu" "toggle"];
+        # "Mod+Shift+V".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "clipboard"];
         # "Mod+C".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "calculator"];
+        "Mod+C".action.spawn = [ "noctalia" "msg" "panel-toggle" "control-center" ];
+        "Mod+S".action.spawn = [ "noctalia" "msg" "panel-toggle" "session" ];
+        "Mod+Shift+V".action.spawn = [ "noctalia" "msg" "panel-toggle" "clipboard" ];
 
         # --- 3. Window Focus (Arrow Keys & HJKL) ---
         "Mod+Left".action.focus-column-left = {};
@@ -147,6 +153,7 @@
         "Ctrl+Alt+A".action.screenshot-window = {};
 
         # --- 10. Volume & Brightness (Via Noctalia) ---
+        # Outdated v4 IPC examples. Restore only with Noctalia v4.
         # "XF86AudioRaiseVolume".action.spawn = ["noctalia-shell" "ipc" "call" "volume" "increase"];
         # "XF86AudioLowerVolume".action.spawn = ["noctalia-shell" "ipc" "call" "volume" "decrease"];
         # "XF86AudioMute".action.spawn = ["noctalia-shell" "ipc" "call" "volume" "muteOutput"];
@@ -154,5 +161,15 @@
 
         # "XF86MonBrightnessUp".action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "increase"];
         # "XF86MonBrightnessDown".action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "decrease"];
+
+        # Noctalia v5 equivalents; left commented because the original bindings
+        # were examples rather than active keybindings.
+        # "XF86AudioRaiseVolume".action.spawn = [ "noctalia" "msg" "volume-up" ];
+        # "XF86AudioLowerVolume".action.spawn = [ "noctalia" "msg" "volume-down" ];
+        # "XF86AudioMute".action.spawn = [ "noctalia" "msg" "volume-mute" ];
+        # "XF86AudioMicMute".action.spawn = [ "noctalia" "msg" "mic-mute" ];
+
+        # "XF86MonBrightnessUp".action.spawn = [ "noctalia" "msg" "brightness-up" ];
+        # "XF86MonBrightnessDown".action.spawn = [ "noctalia" "msg" "brightness-down" ];
     };
 }

@@ -61,6 +61,11 @@ in
         # The Current Workstation
         omen = mkSystem "omen";
 
+        # Framework 13 Pro stays inactive until its generated hardware file,
+        # installer stateVersion, and a supported named kernel newer than 7.2
+        # are available. nixos/kernel.nix deliberately rejects silent fallback.
+        # fw13p = mkSystem "fw13p";
+
         # Future Machines (Uncomment when ready)
         # g14 = mkSystem "g14";
     };

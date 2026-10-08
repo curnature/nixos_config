@@ -3,6 +3,7 @@
 {
     imports = [
         ./ai.nix
+        ./image-viewer.nix
         ./packages.nix
         ./niri
         ./noctalia

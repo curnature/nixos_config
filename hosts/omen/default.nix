@@ -35,5 +35,8 @@
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken. It is fine to keep this constant.
-    system.stateVersion = vars.stateVersion;
+    # Outdated: the shared variable coupled this host's compatibility baseline
+    # to Home Manager and allowed it to change during routine upgrades.
+    # system.stateVersion = vars.stateVersion;
+    system.stateVersion = "25.11";
 }

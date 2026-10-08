@@ -52,7 +52,11 @@
             # --- 3. Manim (Optional) ---
             manim # Mathematical animation engine (for creating videos)
             ffmpeg # Required for video rendering in Manim
-            texlive.combined.scheme-full # Required for rendering LaTeX in Manim
+            # Old setting:
+            # texlive.combined.scheme-full # Required for rendering LaTeX in Manim
+            # `texlive.combined.scheme-full` is deprecated; `texliveFull` is its
+            # supported top-level replacement in current Nixpkgs.
+            texliveFull # Required for rendering LaTeX in Manim
 
             ];
 

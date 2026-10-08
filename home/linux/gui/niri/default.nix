@@ -23,15 +23,20 @@
         settings = {
             # --- 1. Startup ---
             spawn-at-startup = [
-                { command = ["xwayland-satellite"]; }
-                { command = ["noctalia-shell"]; }
+                # Outdated: Niri 25.08+ starts Xwayland Satellite on demand and
+                # assigns DISPLAY itself. Restore only with Niri older than 25.08.
+                # { command = ["xwayland-satellite"]; }
+                # Outdated: Noctalia v4 used the noctalia-shell executable.
+                # Restore this only together with the commented v4 configuration.
+                # { command = ["noctalia-shell"]; }
+                { argv = [ "noctalia" ]; }
             ];
 
-            # --- CHANGE 3: Tell Steam where X11 is ---
-            # Since Niri is pure Wayland, it doesn't set this by default.
-            environment = {
-                DISPLAY = ":0";
-            };
+            # Outdated: a fixed DISPLAY conflicts with Niri's integrated,
+            # on-demand Xwayland Satellite socket. Niri now exports it itself.
+            # environment = {
+            #     DISPLAY = ":0";
+            # };
 
             input = {
                 keyboard = {
@@ -51,10 +56,17 @@
                 honor-xdg-activation-with-invalid-serial = {};
             };
 
-            # Force Noctalia Overview to the background (Wallpaper effect)
+            # Noctalia v5 renamed its overview layer to noctalia-backdrop.
+            # The old rule is retained for rollback to Noctalia v4:
+            # layer-rules = [
+            #     {
+            #         matches = [ { namespace = "^noctalia-overview*"; } ];
+            #         place-within-backdrop = true;
+            #     }
+            # ];
             layer-rules = [
                 {
-                    matches = [ { namespace = "^noctalia-overview*"; } ];
+                    matches = [ { namespace = "^noctalia-backdrop"; } ];
                     place-within-backdrop = true;
                 }
             ];

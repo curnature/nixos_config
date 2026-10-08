@@ -41,9 +41,18 @@
                 };
 
                 # 2. Check the hostname to pick the correct config file
-                targetThemeTxt = if config.networking.hostName == "omen" 
-                    then "theme_1440.txt" 
-                    else "theme_1920.txt"; # The new laptop
+                # Outdated: the catch-all branch treated every non-Omen machine
+                # as the new laptop instead of documenting supported hosts.
+                # targetThemeTxt = if config.networking.hostName == "omen"
+                #     then "theme_1440.txt"
+                #     else "theme_1920.txt"; # The new laptop
+                targetThemeTxt =
+                    if config.networking.hostName == "omen" then
+                        "theme_1440.txt"
+                    else if config.networking.hostName == "fw13p" then
+                        "theme_1920.txt"
+                    else
+                        "theme_1920.txt";
             in 
                 # 3. Build the final theme package dynamically
                 pkgs.runCommand "dynamic-grub-theme" {} ''

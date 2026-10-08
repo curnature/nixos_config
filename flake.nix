@@ -49,8 +49,15 @@
         llm-agents.url = "github:numtide/llm-agents.nix";
 
         # niri + noctalia
-        niri.url = "github:sodiboo/niri-flake";
-        noctalia.url = "github:noctalia-dev/noctalia-shell";
+        # Outdated: sodiboo/niri-flake still referenced libdisplay-info_0_2,
+        # which the current Nixpkgs revision removed.
+        # niri.url = "github:sodiboo/niri-flake";
+        niri.url = "github:epireyn/niri-flake";
+        # Outdated repository name used before the Noctalia v5 rename. Restoring
+        # it also requires restoring the commented v4 JSON-style settings.
+        # noctalia.url = "github:noctalia-dev/noctalia-shell";
+        # The canonical v5 repository remains updateable through the flake lock.
+        noctalia.url = "github:noctalia-dev/noctalia";
 
         my-neovim.url = "github:curnature/NvimFlake";
     };

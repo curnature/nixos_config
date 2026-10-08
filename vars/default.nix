@@ -12,9 +12,13 @@
     editor = "vim";
 
     # -------------------------------------------------------------------------
-    # System Versioning
+    # Home Manager Versioning
     # -------------------------------------------------------------------------
-    # Determines the release version for state compatibility.
-    # See: https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion
-    stateVersion = "26.05";
+    # Outdated: one shared state version incorrectly coupled NixOS migrations
+    # to Home Manager migrations and had been advanced beyond the first install.
+    # stateVersion = "26.05";
+
+    # Keep this at the Home Manager release used for the original installation.
+    # See: https://nix-community.github.io/home-manager/options.xhtml#opt-home.stateVersion
+    homeStateVersion = "24.11";
 }

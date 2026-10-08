@@ -1,93 +1,150 @@
 { ... }:
 {
-    home.file.".cache/noctalia/wallpapers.json".text = builtins.toJSON {
-        defaultWallpaper = "${../../../../wallpapers/BA_alicekey_bg3_2560_1440.png}";
-        # If you have multiple monitors, you can specify them:
-        # wallpapers = {
-        #   "eDP-1" = "${../../../../wallpapers/laptop_bg.jpg}";
-        #   "HDMI-A-1" = "${../../../../wallpapers/monitor_bg.jpg}";
-        # };
-    };
-
     programs.noctalia.settings = {
-        # --- Wallpaper ---
+        # Noctalia v5 stores the selected wallpaper in its TOML config rather
+        # than the v4 JSON cache file under ~/.cache.
         wallpaper = {
             enabled = true;
-            overviewEnabled = false;
             directory = "${../../../../wallpapers}";
-            monitorDirectories = [ ];
-            enableMultiMonitorDirectories = false;
-            showHiddenFiles = false;
-            viewMode = "single";
-            setWallpaperOnAllMonitors = true;
-            fillMode = "crop";
-            fillColor = "#000000";
-            useSolidColor = false;
-            solidColor = "#1a1a2e";
-            automationEnabled = false;
-            wallpaperChangeMode = "random";
-            randomIntervalSec = 300;
-            transitionDuration = 1500;
-            transitionType = "random";
-            transitionEdgeSmoothness = 0.05;
-            panelPosition = "follow_bar";
-            hideWallpaperFilenames = false;
-            useWallhaven = false;
-            wallhavenQuery = "";
-            wallhavenSorting = "relevance";
-            wallhavenOrder = "desc";
-            wallhavenCategories = "111";
-            wallhavenPurity = "100";
-            wallhavenRatios = "";
-            wallhavenApiKey = "";
-            wallhavenResolutionMode = "atleast";
-            wallhavenResolutionWidth = "";
-            wallhavenResolutionHeight = "";
-            sortOrder = "name"; 
+            fill_mode = "crop";
+            fill_color = "#000000";
+            transition = [
+                "fade"
+                "wipe"
+                "disc"
+                "stripes"
+                "zoom"
+                "honeycomb"
+            ];
+            transition_duration = 1500;
+            edge_smoothness = 0.05;
+            transition_on_startup = false;
+            per_monitor_directories = false;
+
+            default.path = "${../../../../wallpapers/BA_alicekey_bg3_2560_1440.png}";
+
+            automation = {
+                enabled = false;
+                interval_seconds = 300;
+                order = "random";
+                recursive = true;
+            };
         };
 
-        # --- Theme ---
-        colorSchemes = {
-            useWallpaperColors = true;
-            predefinedScheme = "Noctalia (default)";
-            darkMode = true;
-            schedulingMode = "off";
-            manualSunrise = "06:30";
-            manualSunset = "18:30";
-            generationMethod = "tonal-spot";
-            monitorForColors = "";
+        theme = {
+            mode = "dark";
+            source = "wallpaper";
+            wallpaper_scheme = "m3-tonal-spot";
         };
-        templates = {
-            activeTemplates = [ ];
-            enableUserTheming = false;
+
+        # This layer is the v5 replacement for noctalia-overview and matches the
+        # Niri `^noctalia-backdrop` layer rule.
+        backdrop = {
+            enabled = true;
+            blur_intensity = 0.5;
+            tint_intensity = 0.3;
         };
-        nightLight = {
+
+        nightlight = {
             enabled = false;
-            forced = false;
-            autoSchedule = true;
-            nightTemp = "4000";
-            dayTemp = "6500";
-            manualSunrise = "06:30";
-            manualSunset = "18:30";
-        }; 
-
-        # --- UI & Density ---
-        ui = {
-            fontDefault = "";
-            fontFixed = "";
-            fontDefaultScale = 1;
-            fontFixedScale = 1;
-            tooltipsEnabled = true;
-            panelBackgroundOpacity = 0.93;
-            panelsAttachedToBar = true;
-            settingsPanelMode = "attached";
-            wifiDetailsViewMode = "grid";
-            bluetoothDetailsViewMode = "grid";
-            networkPanelView = "wifi";
-            bluetoothHideUnnamedDevices = false;
-            boxBorderEnabled = false; 
+            force = false;
+            temperature_night = 4000;
+            temperature_day = 6500;
         };
 
-        
+        shell.panel.wallpaper_show_names = true;
     };
+
+    # -------------------------------------------------------------------------
+    # Previous Noctalia v4 settings
+    # -------------------------------------------------------------------------
+    # Outdated: v5 reads `wallpaper.default.path` from config.toml and no longer
+    # uses this mutable JSON cache. Restore only with Noctalia v4.
+    # home.file.".cache/noctalia/wallpapers.json".text = builtins.toJSON {
+    #     defaultWallpaper = "${../../../../wallpapers/BA_alicekey_bg3_2560_1440.png}";
+    #     # If you have multiple monitors, you can specify them:
+    #     # wallpapers = {
+    #     #     "eDP-1" = "${../../../../wallpapers/laptop_bg.jpg}";
+    #     #     "HDMI-A-1" = "${../../../../wallpapers/monitor_bg.jpg}";
+    #     # };
+    # };
+    #
+    # Outdated: v4 used camelCase JSON-style keys. Restore this block only with
+    # the v4 package and the old compositor commands.
+    # programs.noctalia.settings = {
+    #     wallpaper = {
+    #         enabled = true;
+    #         overviewEnabled = false;
+    #         directory = "${../../../../wallpapers}";
+    #         monitorDirectories = [ ];
+    #         enableMultiMonitorDirectories = false;
+    #         showHiddenFiles = false;
+    #         viewMode = "single";
+    #         setWallpaperOnAllMonitors = true;
+    #         fillMode = "crop";
+    #         fillColor = "#000000";
+    #         useSolidColor = false;
+    #         solidColor = "#1a1a2e";
+    #         automationEnabled = false;
+    #         wallpaperChangeMode = "random";
+    #         randomIntervalSec = 300;
+    #         transitionDuration = 1500;
+    #         transitionType = "random";
+    #         transitionEdgeSmoothness = 0.05;
+    #         panelPosition = "follow_bar";
+    #         hideWallpaperFilenames = false;
+    #         useWallhaven = false;
+    #         wallhavenQuery = "";
+    #         wallhavenSorting = "relevance";
+    #         wallhavenOrder = "desc";
+    #         wallhavenCategories = "111";
+    #         wallhavenPurity = "100";
+    #         wallhavenRatios = "";
+    #         wallhavenApiKey = "";
+    #         wallhavenResolutionMode = "atleast";
+    #         wallhavenResolutionWidth = "";
+    #         wallhavenResolutionHeight = "";
+    #         sortOrder = "name";
+    #     };
+    #
+    #     colorSchemes = {
+    #         useWallpaperColors = true;
+    #         predefinedScheme = "Noctalia (default)";
+    #         darkMode = true;
+    #         schedulingMode = "off";
+    #         manualSunrise = "06:30";
+    #         manualSunset = "18:30";
+    #         generationMethod = "tonal-spot";
+    #         monitorForColors = "";
+    #     };
+    #     templates = {
+    #         activeTemplates = [ ];
+    #         enableUserTheming = false;
+    #     };
+    #     nightLight = {
+    #         enabled = false;
+    #         forced = false;
+    #         autoSchedule = true;
+    #         nightTemp = "4000";
+    #         dayTemp = "6500";
+    #         manualSunrise = "06:30";
+    #         manualSunset = "18:30";
+    #     };
+    #
+    #     ui = {
+    #         fontDefault = "";
+    #         fontFixed = "";
+    #         fontDefaultScale = 1;
+    #         fontFixedScale = 1;
+    #         tooltipsEnabled = true;
+    #         panelBackgroundOpacity = 0.93;
+    #         panelsAttachedToBar = true;
+    #         settingsPanelMode = "attached";
+    #         wifiDetailsViewMode = "grid";
+    #         bluetoothDetailsViewMode = "grid";
+    #         networkPanelView = "wifi";
+    #         bluetoothHideUnnamedDevices = false;
+    #         boxBorderEnabled = false;
+    #     };
+    # };
 }

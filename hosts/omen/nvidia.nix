@@ -1,10 +1,11 @@
 { config, ... }:
 
 {
-    # Enable OpenGL
-    hardware.graphics = {
-        enable = true;
-    };
+    # Moved: graphics support is required by both NVIDIA and Intel hosts, so the
+    # active setting now lives in ../../nixos/graphics.nix.
+    # hardware.graphics = {
+    #     enable = true;
+    # };
 
     # Load nvidia driver for Xorg and Wayland
     services.xserver.videoDrivers = [ "nvidia" ];

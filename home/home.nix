@@ -7,7 +7,10 @@
     home = {
         username = vars.username;
         homeDirectory = "/home/${vars.username}";
-        stateVersion = vars.stateVersion;
+        # Outdated: vars.stateVersion combined the independent NixOS and Home
+        # Manager compatibility versions and was accidentally advanced.
+        # stateVersion = vars.stateVersion;
+        stateVersion = vars.homeStateVersion;
         sessionVariables = { NIXOS_OZONE_WL = "1"; }; # Forces Electron apps (VS Code, QQ, WeChat, Obsidian) to use Wayland
     };
 
