@@ -15,7 +15,7 @@
 
     xdg.configFile."qt6ct/qt6ct.conf".source = ./qt6ct.conf; 
 
-    programs.noctalia-shell = {
+    programs.noctalia = {
         enable = true;
         # settingsVersion = 0;
         # We don't put 'settings' here anymore; 

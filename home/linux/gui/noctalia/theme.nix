@@ -9,7 +9,7 @@
         # };
     };
 
-    programs.noctalia-shell.settings = {
+    programs.noctalia.settings = {
         # --- Wallpaper ---
         wallpaper = {
             enabled = true;

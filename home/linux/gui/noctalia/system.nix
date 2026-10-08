@@ -1,6 +1,6 @@
 { ... }:
 {
-    programs.noctalia-shell.settings = {
+    programs.noctalia.settings = {
         general = {
             # Critical system settings
             avatarImage = "";

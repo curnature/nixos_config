@@ -85,7 +85,7 @@ in
 
         nodejs = {
             path = ../templates/nodejs;
-            description = "Node.js 24 DSH Plugin Development Environment";
+            description = "Node.js 24 Development Environment";
         };
    
     };
