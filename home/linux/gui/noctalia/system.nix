@@ -21,6 +21,9 @@
         };
 
         lockscreen = {
+            # v5 lock-screen power buttons do not implement v4's cancellable
+            # 10-second countdown. shell.session countdowns apply only to the
+            # separate session panel; do not assume that protection here.
             enabled = true;
             lock_before_suspend = true;
             fingerprint = false;
@@ -30,6 +33,9 @@
         system.monitor = {
             enabled = true;
             cpu_poll_seconds = 1.0;
+            # Preserve current v5 polling pending the separate GPU-policy choice.
+            # v4 excluded discrete GPUs; v5's demand-based monitoring has no
+            # equivalent selector. Setting 0 would disable ALL GPU statistics.
             gpu_poll_seconds = 3.0;
             memory_poll_seconds = 1.0;
             disk_poll_seconds = 30.0;
@@ -50,6 +56,9 @@
         };
 
         notification = {
+            # v5 cannot express v4's per-urgency 3/8/15-second timeouts or retain
+            # low-urgency history. It honors application expiry/defaults and
+            # records eligible normal/critical notifications instead.
             enable_daemon = true;
             position = "top_right";
             layer = "overlay";
@@ -73,7 +82,33 @@
             monitors = [ ];
         };
 
-        brightness.enable_ddcutil = false;
+        # Previously all kinds inherited v5's enabled defaults. Match v4's
+        # volume/input-volume/brightness OSDs plus its keyboard-layout toast.
+        osd.kinds = {
+            volume = true;
+            volume_output = true;
+            volume_input = true;
+            brightness = true;
+            keyboard_layout = true;
+            lock_keys = false;
+            media = false;
+            wifi = false;
+            bluetooth = false;
+            power_profile = false;
+            caffeine = false;
+            nightlight = false;
+            dnd = false;
+            privacy = false;
+            keyboard_backlight = false;
+        };
+
+        # Previous single-setting form; keep DDC disabled while restoring v4's
+        # enforceMinimum=true (1%), omitted by the initial v5 migration.
+        # brightness.enable_ddcutil = false;
+        brightness = {
+            enable_ddcutil = false;
+            minimum_brightness = 0.01;
+        };
         battery.warning_threshold = 30;
 
         location = {
@@ -84,7 +119,9 @@
         weather = {
             enabled = true;
             effects = true;
-            unit = "celsius";
+            # v5 accepts metric/imperial; celsius only worked via its fallback.
+            # unit = "celsius";
+            unit = "metric";
         };
     };
 

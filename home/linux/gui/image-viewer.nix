@@ -25,6 +25,11 @@ in
             "x-scheme-handler/chrome" = [ browser ];
             "x-scheme-handler/clash" = [ "clash-verge.desktop" ];
             "x-scheme-handler/clash-verge" = [ "clash-verge.desktop" ];
+            # Previously declared only under defaultApplications below. The
+            # live mimeapps.list also registered this Added Association; keep
+            # it declarative so this known entry is not missing after rebuilds.
+            # This does not prevent applications from rewriting the file.
+            "x-scheme-handler/codex" = [ "chatgpt.desktop" ];
             "x-scheme-handler/http" = [ browser ];
             "x-scheme-handler/https" = [ browser ];
 

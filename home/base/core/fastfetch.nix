@@ -24,7 +24,13 @@
                 "display",
                 "de",
                 "wm",
-                "terminal",
+                // Previous setting: Fastfetch's pretty name misparses VS Code's
+                // process title on NixOS. Use the process name without its flags.
+                // "terminal",
+                {
+                    "type": "terminal",
+                    "format": "{process-name} {version}"
+                },
                 "terminalfont",
                 "cpu",
                 "gpu",
