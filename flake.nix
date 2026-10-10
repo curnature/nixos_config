@@ -32,6 +32,11 @@
         # Pre-configured hardware tweaks (GPU, Audio, etc)
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+        # Framework 13 Pro only: pin the reported 7.2.8-cachyos-lto kernel.
+        # Keep this input's own Nixpkgs/toolchain pin; do not add nixpkgs.follows.
+        # This freezes the kernel version: review security updates explicitly.
+        nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/b1332396df6e880d7e3b6b451c6a74132ce8cf66";
+
         # ---------------------------------------------------------------------
         # 4. Plugins & Extras
         # ---------------------------------------------------------------------

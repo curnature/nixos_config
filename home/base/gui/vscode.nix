@@ -48,8 +48,16 @@
 
         ];
 
-        # These settings are "locked" by Nix. 
+        # Previous explanation (incorrect for the old read-only settings file):
+        # These settings are "locked" by Nix.
         # You can still change other settings in the UI, but these will always reset on reload.
+        # Previous implicit Home Manager default; it locked the whole settings.json:
+        # profiles.default.mutableUserSettings = false;
+        # Keep settings writable in VS Code. At Home Manager activation, declared
+        # values below take precedence; other manually added settings are preserved.
+        # Declared values are reapplied on activation, not on every VS Code reload.
+        profiles.default.mutableUserSettings = true;
+
         profiles.default.userSettings = {
             "editor.fontFamily" = "'CommitMono Nerd Font', 'Droid Sans Mono', 'monospace', droid sans mono";
             "editor.fontSize" = 14;
